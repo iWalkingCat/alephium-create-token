@@ -1,0 +1,27 @@
+{
+  "fullNodeVersion": "v4.0.1",
+  "compilerOptionsUsed": {
+    "ignoreUnusedConstantsWarnings": false,
+    "ignoreUnusedVariablesWarnings": false,
+    "ignoreUnusedFieldsWarnings": false,
+    "ignoreUnusedPrivateFunctionsWarnings": false,
+    "ignoreUpdateFieldsCheckWarnings": false,
+    "ignoreCheckExternalCallerWarnings": false,
+    "ignoreUnusedFunctionReturnWarnings": false,
+    "skipAbstractContractCheck": false
+  },
+  "infos": {
+    "IFungibleToken": {
+      "sourceFile": "C:\\Users\\forvi\\AppData\\Local\\npm-cache\\_npx\\f1b120e1b513c04c\\node_modules\\@alephium\\web3\\std\\fungible_token_interface.ral",
+      "sourceCodeHash": "62910bf11e1eeb6cb2fd468626ff606a9b06306b2b81590c3b10f6deb5966bde",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": ""
+    },
+    "WalkingCatToken": {
+      "sourceFile": "walking-cat-token.ral",
+      "sourceCodeHash": "20d7142704681579c450f6f41f871eaec08c22e632c3813745196f451cb3ca53",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "a2800413eb2c5c23d48068db23df5f8eeaba04653e12c8ed59d589720d96dadd"
+    }
+  }
+}
