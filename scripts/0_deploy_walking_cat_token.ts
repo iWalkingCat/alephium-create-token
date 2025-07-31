@@ -29,27 +29,27 @@ const deployWalkingCatToken: DeployFunction<Settings> = async (
 
     // [RU] Создаем "Получателя", которому контракт отправит токены после их создания
     // [EN] Create a "Recipient" to whom the contract will send tokens after their creation
-    const receiver = '1BCnyrTqTKtikA2c6iYXKrUiet3UmZLpHwnJ6QNbxYjUP'   // [RU] ЗАМЕНИТЕ АДРЕС НА НУЖНЫЙ | [EN] REPLACE THE ADDRESS WITH THE REQUIRED ONE
+    const receiver = '1BCnyrTqTKtikA2c6iYXKrUiet3UmZLpHwnJ6QNbxYjUP'   // [EN] REPLACE THE ADDRESS WITH THE REQUIRED ONE | [RU] ЗАМЕНИТЕ АДРЕС НА НУЖНЫЙ
     
     // [RU] Заполняем поля токена
     const initialFields = {
-        symbol: stringToHex('WCAT'),                    // [RU] ИЗМЕНИТЕ СИМВОЛ ТОКЕНА                  | [EN] CHANGE THE TOKEN SYMBOL
-        name: stringToHex('TheWalkingCat'),             // [RU] ИЗМЕНИТЕ ИМЯ ТОКЕНА                     | [EN] CHANGE THE TOKEN NAME
+        symbol: stringToHex('WCAT'),                                    // [EN] CHANGE THE TOKEN SYMBOL                         | [RU] ИЗМЕНИТЕ СИМВОЛ ТОКЕНА
+        name: stringToHex('TheWalkingCat'),                             // [EN] CHANGE THE TOKEN NAME                           | [RU] ИЗМЕНИТЕ ИМЯ ТОКЕНА
         decimals: 18n,
-        supply: 100000n * (10n ** 18n),                 // [RU] ИЗМЕНИТЕ КОЛИЧЕСТВО (100000n) ТОКЕНА    | [EN] CHANGE THE QUANTITY (100000n) OF THE TOKEN
+        supply: 100000n * (10n ** 18n),                                 // [EN] CHANGE THE QUANTITY (100000n) OF THE TOKEN      | [RU] ИЗМЕНИТЕ КОЛИЧЕСТВО (100000n) ТОКЕНА
     }
     
     // [RU] Развертывание контракта с отправкой токенов
-    const deployResult = await WalkingCatToken.deploy(signer, { // [RU] Обращается к скомпилированному контракту WalkingCatToken            | [EN] References the compiled WalkingCatToken contract
-                                                                //      (*.ral -> artifacts.ts/*.ts) и разворачивает контракт через .deploy |      (*.ral -> artifacts.ts/*.ts) and deploys the contract via .deploy
-        initialFields: initialFields,                           // [RU] Принимает значения полей из const initialFields                     | [EN] Accepts field values from const initialFields
-        issueTokenAmount: initialFields.supply,                 // [RU] issueTokenAmount выпускает токены и явно задет количество           | [EN] issueTokenAmount issues tokens and explicitly sets the quantity
-        issueTokenTo: receiver                                  // [RU] issueTokenTo отправляет токены на указанный адрес                   | [EN] issueTokenTo sends tokens to the specified address
+    const deployResult = await WalkingCatToken.deploy(signer, { // [EN] References the compiled WalkingCatToken contract                        | [RU] Обращается к скомпилированному контракту WalkingCatToken
+                                                                //      (*.ral -> artifacts.ts/*.ts) and deploys the contract via .deploy       |      (*.ral -> artifacts.ts/*.ts) и разворачивает контракт через .deploy     
+        initialFields: initialFields,                           // [EN] Accepts field values from const initialFields                           | [RU] Принимает значения полей из const initialFields
+        issueTokenAmount: initialFields.supply,                 // [EN] issueTokenAmount issues tokens and explicitly sets the quantity         | [RU] issueTokenAmount выпускает токены и явно задет количество
+        issueTokenTo: receiver                                  // [EN] issueTokenTo sends tokens to the specified address                      | [RU] issueTokenTo отправляет токены на указанный адрес
     })
     
     // [RU] Выводим логи
-    console.log('Contract deployed at:', deployResult.contractInstance.address)         // [RU] Логи с адресом контракта токена     | [EN] Logs with the token contract address
-    console.log('Token ID:', deployResult.contractInstance.contractId)                  // [RU] Логи с id контракта                 | [EN] Logs with the contract ID
+    console.log('Contract deployed at:', deployResult.contractInstance.address)         // [EN] Logs with the token contract address            | [RU] Логи с адресом контракта токена
+    console.log('Token ID:', deployResult.contractInstance.contractId)                  // [EN] Logs with the contract ID                       | [RU] Логи с id контракта
 }
 
 export default deployWalkingCatToken
